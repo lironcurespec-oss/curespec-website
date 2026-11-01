@@ -148,6 +148,8 @@ section{padding-block:clamp(72px,9vw,120px)}
 .inq .facts div{display:flex;gap:14px;align-items:flex-start;color:var(--on-d-2);font-size:.95rem}
 .inq .facts b{color:#fff;font-weight:600}
 .inq .facts i{width:28px;height:28px;border-radius:9px;flex:none;display:grid;place-items:center;background:rgba(143,220,255,.1);border:1px solid rgba(143,220,255,.28);font-style:normal;color:var(--teal);font-size:.85rem}
+.notfor{background:rgba(63,195,255,.1);border:1px solid rgba(143,220,255,.35);border-radius:12px;padding:14px 16px;font-size:1rem;line-height:1.5;color:#fff}
+.notfor b{color:var(--teal);font-weight:700}
 /* closing cta */
 .cta-sec{padding-block:clamp(56px,7vw,90px)}
 .cta.dark{background:radial-gradient(60% 120% at 100% 0%,rgba(63,195,255,.3),transparent 60%),var(--deep)}
@@ -270,7 +272,7 @@ section{padding-block:clamp(72px,9vw,120px)}
     <span class="fs">Medical background (optional)</span>
     <div class="f"><label for="ag">Patient age</label><input id="ag" name="age" type="number" min="18" max="120" inputmode="numeric"></div>
     <div class="f"><label for="eg">eGFR (if known)</label><input id="eg" name="egfr" inputmode="decimal"><span class="hint">From the latest blood test</span></div>
-    <div class="f full" style="font-size:.85rem;color:var(--on-d-2);line-height:1.5">Treatment is not suitable for patients with kidney stones, polycystic kidney disease, a kidney transplant, active cancer, who have already started dialysis, or who are pregnant.</div>
+    <div class="f full notfor"><b>Not suitable for patients with:</b> kidney stones, polycystic kidney disease, a kidney transplant, active cancer, who have already started dialysis, or who are pregnant.</div>
     <div class="f full"><label for="ms">Anything else we should know?</label><textarea id="ms" name="message"></textarea></div>
     <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Curespec may contact me regarding this inquiry. <i style="font-style:normal;color:var(--teal)">*</i></span></label>
     <button class="btn btn-primary" type="submit">Send inquiry →</button>
