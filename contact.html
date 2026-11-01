@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Contact Us | Curespec</title>
+<meta name="description" content="Have a question about Nephrospec™ or Curespec? Send us a message and our team will get back to you.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Rubik:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+:root{--deep:#050f2c;--line-d:rgba(143,220,255,.16);--cyan:#3fc3ff;--glow:#8fdcff;--teal:#5fe0c0;--ground:#c4e8fa;--card:rgba(255,255,255,.55);--line:rgba(26,127,224,.22);--ink:#0b1f4d;--ink-2:#4a5d7e;--on-d:#fff;--on-d-2:#a9c3e2;--f-display:"Rubik",system-ui,sans-serif;--f-body:"Heebo",system-ui,sans-serif;--f-mono:"JetBrains Mono",ui-monospace,monospace;--r:18px;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--f-display);line-height:1.08;margin:0;text-wrap:balance}p{margin:0}a{color:inherit}img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+section{padding-block:clamp(72px,9vw,120px)}
+.tag{font-family:var(--f-mono);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);display:inline-flex;align-items:center;gap:10px}
+.tag::before{content:"";width:22px;height:1px;background:currentColor}.light .tag{color:#0b78b8}
+.dark{position:relative;background:var(--deep);color:var(--on-d);overflow:hidden}
+.cta::before,.page-hero::before,.inq::before{display:none}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:600;font-size:1rem;border-radius:12px;padding:14px 26px;text-decoration:none;border:1px solid transparent;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,#3fc3ff,#1a7fe0);color:#fff;box-shadow:0 0 0 1px rgba(143,220,255,.4),0 16px 36px -14px rgba(63,195,255,.85)}
+.logo{display:block;width:168px;flex:none}
+.logo i{display:block;aspect-ratio:600/149;background:url(data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==) center/contain no-repeat}
+/* NOTE: logo image temporarily omitted on this page due to technical transcription-risk limits; please re-upload the logo asset to restore it. */
+.top{position:sticky;top:0;z-index:20;background:rgba(5,15,44,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-d)}
+.top .wrap{display:flex;align-items:center;gap:28px;min-height:72px}
+.nav{display:flex;gap:28px;margin-inline-start:auto;align-items:center;font-weight:500;font-size:.95rem;color:var(--on-d)}
+.nav>a,.dd>button{color:var(--on-d);text-decoration:none;font:inherit;background:none;border:0;cursor:pointer;padding:0;display:flex;gap:7px;align-items:center}
+.dd>button[aria-current],.dd-menu a[aria-current]{color:var(--cyan)}
+.dd{position:relative}
+.dd>button::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.dd-menu{position:absolute;top:calc(100% + 14px);inset-inline-start:-16px;min-width:220px;background:#0b1c47;border:1px solid var(--line-d);border-radius:14px;padding:8px;display:none;box-shadow:0 24px 50px -20px rgba(0,0,0,.6)}
+.dd-menu::before{content:"";position:absolute;inset:-16px 0 auto;height:16px}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{display:grid}
+.dd-menu a{padding:10px 12px;border-radius:8px;text-decoration:none;color:var(--on-d-2)}
+.dd-menu a:hover{background:rgba(63,195,255,.1);color:#fff}
+.top .btn{padding:10px 20px;font-size:.92rem}
+.menu{display:none;margin-inline-start:auto}
+.menu summary{list-style:none;cursor:pointer;color:#fff;font-family:var(--f-mono);font-size:.85rem;letter-spacing:.1em;padding:8px 14px;border:1px solid var(--line-d);border-radius:10px}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:fixed;inset-inline:0;top:72px;background:#07163b;border-bottom:1px solid var(--line-d);padding:10px 20px 22px;display:grid;max-height:calc(100vh - 72px);overflow:auto}
+.menu nav b{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;color:var(--cyan);margin-top:16px}
+.menu nav a{padding:11px 0;color:#fff;text-decoration:none;border-bottom:1px solid var(--line-d)}
+@media (max-width:980px){.nav,.top .btn{display:none}.menu{display:block}}
+
+.page-hero{padding-block:clamp(64px,8vw,104px);background:radial-gradient(55% 90% at 85% 30%,#123a86 0%,transparent 70%),var(--deep)}
+.page-hero .wrap{position:relative;display:grid;gap:18px}
+.crumb{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.14em;color:var(--on-d-2);text-transform:uppercase}
+.crumb a{text-decoration:none}.crumb a:hover{color:#fff}
+.page-hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800;letter-spacing:-.03em}
+.page-hero h1 span{background:linear-gradient(90deg,#8fdcff,#3fc3ff 50%,#5fe0c0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-hero .lead{color:var(--on-d-2);font-size:clamp(1.05rem,1.4vw,1.2rem);max-width:56ch;margin-top:4px}
+
+.light{position:relative;overflow:hidden;background:radial-gradient(55% 70% at 8% 0%,rgba(63,195,255,.35),transparent 65%),radial-gradient(50% 70% at 100% 100%,rgba(95,224,192,.3),transparent 65%),linear-gradient(180deg,#dcf2fd 0%,#c4e8fa 100%)}
+.light>.wrap,.dark>.wrap{position:relative}
+.head{max-width:720px;margin-bottom:48px}
+.head h2{font-size:clamp(2rem,4vw,3.1rem);font-weight:800;letter-spacing:-.02em;margin-top:14px}
+
+/* inquiry */
+.inq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,80px);align-items:start}
+.inq h2{font-size:clamp(2rem,4vw,3.1rem);font-weight:800;letter-spacing:-.02em;margin-top:14px}
+.inq .txt{color:var(--on-d-2);margin-top:18px;max-width:42ch}
+.inq .alt{margin-top:28px;font-size:.95rem;color:var(--on-d-2)}
+.inq .alt a{color:#8fdcff}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:clamp(24px,4vw,40px);border:1px solid var(--line-d);border-radius:24px;background:linear-gradient(160deg,rgba(18,58,134,.5),rgba(10,28,72,.3));position:relative;overflow:hidden}
+.form::before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,#3fc3ff,#5fe0c0,transparent)}
+.f{display:grid;gap:7px}
+.f.full{grid-column:1/-1}
+.f label{font-family:var(--f-mono);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--on-d-2)}
+.f label i{font-style:normal;color:var(--teal)}
+.f input,.f textarea{font:inherit;font-size:1rem;color:#fff;background:rgba(5,15,44,.55);border:1px solid rgba(143,220,255,.22);border-radius:12px;padding:13px 14px;transition:border-color .2s,box-shadow .2s;width:100%}
+.f textarea{min-height:120px;resize:vertical}
+.f input:focus,.f textarea:focus{outline:none;border-color:#3fc3ff;box-shadow:0 0 0 3px rgba(63,195,255,.18)}
+.form .btn{grid-column:1/-1;justify-self:start;border:0;cursor:pointer}
+.sent{grid-column:1/-1;display:none;color:var(--teal);font-family:var(--f-display);font-weight:600}
+.form.done .sent{display:block}
+@media (max-width:900px){.inq-grid{grid-template-columns:1fr}}
+@media (max-width:560px){.form{grid-template-columns:1fr}}
+
+.f select{font:inherit;font-size:1rem;color:#fff;background:rgba(5,15,44,.55);border:1px solid rgba(143,220,255,.22);border-radius:12px;padding:13px 14px;width:100%;appearance:none;background-image:linear-gradient(45deg,transparent 50%,#8fdcff 50%),linear-gradient(135deg,#8fdcff 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 15px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.f select:focus{outline:none;border-color:#3fc3ff;box-shadow:0 0 0 3px rgba(63,195,255,.18)}
+.f select option{background:#0b1c47}
+.consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--on-d-2)}
+.consent input{margin-top:4px;width:18px;height:18px;accent-color:#3fc3ff;flex:none}
+.inq .facts{margin-top:30px;display:grid;gap:14px}
+.inq .facts div{display:flex;gap:14px;align-items:flex-start;color:var(--on-d-2);font-size:.95rem}
+.inq .facts b{color:#fff;font-weight:600}
+.inq .facts i{width:28px;height:28px;border-radius:9px;flex:none;display:grid;place-items:center;background:rgba(143,220,255,.1);border:1px solid rgba(143,220,255,.28);font-style:normal;color:var(--teal);font-size:.85rem}
+/* closing cta */
+.cta-sec{padding-block:clamp(56px,7vw,90px)}
+.cta.dark{background:radial-gradient(60% 120% at 100% 0%,rgba(63,195,255,.3),transparent 60%),var(--deep)}
+.cta .small{font-size:.9rem}.cta .small a{color:#8fdcff}
+/* reveal on scroll */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--dl,0s)}
+.js .rv.in{opacity:1;transform:none}
+.cta{position:relative;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;border-radius:24px;padding:clamp(32px,6vw,60px);border:1px solid var(--line-d)}
+.cta h2{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:800}.cta p{color:var(--on-d-2);margin-top:8px}
+
+.foot{background:var(--deep);color:var(--on-d-2);padding-block:64px 30px;font-size:.93rem;border-top:1px solid var(--line-d)}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+.foot h3{font-family:var(--f-mono);font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+.foot ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.foot a{color:var(--on-d-2);text-decoration:none}.foot a:hover{color:#fff}
+.foot-bottom{margin-top:44px;border-top:1px solid var(--line-d);padding-top:20px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+@media (max-width:860px){.foot-top{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot-top{grid-template-columns:1fr}}
+.preview{background:#fff3c4;color:#5b4500;font-size:.85rem;text-align:center;padding:8px 16px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="preview">Preview for review: Contact Us page. The form is not yet connected to Monday.</div>
+<header class="top"><div class="wrap">
+  <a class="logo" href="index.html" aria-label="Curespec home"><i></i></a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">What</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Who</button><div class="dd-menu"><a href="about.html">About</a><a href="team.html">Our Team</a><a href="global.html">Curespec Global</a></div></div>
+    <div class="dd"><button type="button" aria-haspopup="true">How</button><div class="dd-menu"><a href="technology.html">Our Product</a><a href="faqs.html">FAQs</a></div></div>
+    <div class="dd"><button type="button" aria-haspopup="true" aria-current="true">Contact Us</button><div class="dd-menu"><a href="investors.html">Investors</a><a href="private-inquiry.html">Private Inquiry</a><a href="contact.html" aria-current="page">Do you have a question?</a></div></div>
+  </nav>
+  <a class="btn btn-primary" href="#form">Get in touch</a>
+  <details class="menu"><summary>MENU</summary><nav aria-label="Mobile">
+    <a href="index.html">What</a>
+    <b>WHO</b><a href="about.html">About</a><a href="team.html">Our Team</a><a href="global.html">Curespec Global</a>
+    <b>HOW</b><a href="technology.html">Our Product</a><a href="faqs.html">FAQs</a>
+    <b>CONTACT US</b><a href="investors.html">Investors</a><a href="private-inquiry.html">Private Inquiry</a><a href="contact.html">Do you have a question?</a>
+  </nav></details>
+</div></header>
+
+<main>
+<section class="page-hero dark">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="crumb"><a href="index.html">Home</a> / Contact Us / Do you have a question?</span>
+      <h1>Do you have a <span>question?</span></h1>
+      <p class="lead">Whether you're a physician, a clinical center, a distributor or simply curious about Nephrospec™, send us a message and our team will get back to you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark inq" id="form" style="border-top:1px solid var(--line-d)"><div class="wrap inq-grid">
+  <div class="rv">
+    <span class="tag">Get in touch</span>
+    <h2>Ask us anything</h2>
+    <p class="txt">Looking to start treatment? Visit the <a href="private-inquiry.html" style="color:#8fdcff">Private Inquiry</a> page. Interested in investing? Visit the <a href="investors.html" style="color:#8fdcff">Investors</a> page. For everything else, use the form.</p>
+    <div class="facts">
+      <div><i>✓</i><span><b>Personal reply</b> from our team</span></div>
+      <div><i>✓</i><span><b>Physicians, partners and patients</b> all welcome</span></div>
+    </div>
+  </div>
+  <form class="form rv" style="--dl:.12s" id="contact-form" novalidate>
+    <div class="f"><label for="fn">Full name <i>*</i></label><input id="fn" name="name" autocomplete="name" required></div>
+    <div class="f"><label for="em">Email <i>*</i></label><input id="em" name="email" type="email" autocomplete="email" required></div>
+    <div class="f"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
+    <div class="f"><label for="ty">I am a</label><select id="ty" name="type"><option>Physician</option><option>Clinical center</option><option>Distributor / partner</option><option>Patient</option><option>Other</option></select></div>
+    <div class="f full"><label for="ms">Message <i>*</i></label><textarea id="ms" name="message" required></textarea></div>
+    <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Curespec may contact me regarding this message. <i style="font-style:normal;color:var(--teal)">*</i></span></label>
+    <button class="btn btn-primary" type="submit">Send message →</button>
+    <p class="sent" role="status">Thank you. Our team will get back to you shortly.</p>
+  </form>
+</div></section>
+
+<section class="light cta-sec"><div class="wrap">
+  <div class="cta dark rv">
+    <div><h2>Looking for more answers?</h2><p>Check our frequently asked questions.</p></div>
+    <a class="btn btn-primary" href="faqs.html">Visit FAQs →</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div class="foot-top">
+    <div style="display:grid;gap:16px;align-content:start"><a class="logo" href="index.html" aria-label="Curespec home"><i></i></a><p>Lowering Blood Pressure<br>Through Kidney-Targeted Innovation</p></div>
+    <div><h3>Location</h3><p>HaTa'asiya St 40,<br>Yehud-Monosson, 5610103,<br>Israel</p></div>
+    <div><h3>Explore</h3><ul><li><a href="about.html">About</a></li><li><a href="technology.html">Our Product</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="investors.html">Investors</a></li></ul></div>
+    <div><h3>Follow us on</h3><ul><li><a href="https://www.linkedin.com/company/curespec/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.facebook.com/Curespec" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.youtube.com/@curespec-nps" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Curespec</span><span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a> · <a href="regulatory.html">Global Regulatory Information</a></span></div>
+</div></footer>
+<script>
+(function(){var els=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});els.forEach(function(e){io.observe(e)})})();
+document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();var f=e.target;if(!f.checkValidity()){f.reportValidity();return}f.classList.add('done');f.querySelector('button[type=submit]').disabled=true});
+</script>
+</body>
+</html>
