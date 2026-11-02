@@ -177,6 +177,9 @@ document.getElementById('lead-form').addEventListener('submit',function(e){
   new FormData(f).forEach(function(v,k){data[k]=v});
   f.querySelector('button[type=submit]').disabled=true;
   fetch('https://curespec-leads.lironcurespec.workers.dev/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-    .finally(function(){document.getElementById('l-sent').hidden=false});
+    .finally(function(){
+      Array.from(f.children).forEach(function(c){if(c.id!=='l-sent')c.hidden=true});
+      document.getElementById('l-sent').hidden=false;
+    });
 });
 </script>
