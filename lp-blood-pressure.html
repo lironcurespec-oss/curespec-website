@@ -170,5 +170,5 @@
 </div>
 
 <script>
-document.getElementById('lead-form').addEventListener('submit',function(e){e.preventDefault();document.getElementById('l-sent').hidden=false;});
+document.getElementById('lead-form').addEventListener('submit',function(e){e.preventDefault();var f=e.target;Array.from(f.children).forEach(function(c){if(c.id!=='l-sent')c.hidden=true});document.getElementById('l-sent').hidden=false;});
 </script>
