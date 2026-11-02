@@ -138,7 +138,7 @@
         <label for="l-q">האם אובחנת במחלת כליות?<select id="l-q" name="ckd"><option>כן</option><option>לא</option><option>לא בטוח/ה</option></select></label>
         <label class="check" for="l-consent"><input id="l-consent" type="checkbox" required> אני מאשר/ת שיחזרו אליי ומסכים/ה <a href="#">למדיניות הפרטיות</a>.</label>
         <button class="btn btn-primary" type="submit">שליחה</button>
-        <p class="sent" id="l-sent" hidden>תצוגה בלבד: באתר החי הפרטים נכנסים ישר ללוח הלידים במונדיי.</p>
+        <p class="sent" id="l-sent" hidden>תודה! הפרטים התקבלו ונחזור אליכם בהקדם.</p>
       </form>
     </div>
   </section>
@@ -170,5 +170,13 @@
 </div>
 
 <script>
-document.getElementById('lead-form').addEventListener('submit',function(e){e.preventDefault();var f=e.target;Array.from(f.children).forEach(function(c){if(c.id!=='l-sent')c.hidden=true});document.getElementById('l-sent').hidden=false;});
+document.getElementById('lead-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target;
+  var data={form:'lp-blood-pressure'};
+  new FormData(f).forEach(function(v,k){data[k]=v});
+  f.querySelector('button[type=submit]').disabled=true;
+  fetch('https://curespec-leads.lironcurespec.workers.dev/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    .finally(function(){document.getElementById('l-sent').hidden=false});
+});
 </script>

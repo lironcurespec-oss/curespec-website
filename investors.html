@@ -166,7 +166,6 @@ section{padding-block:clamp(72px,9vw,120px)}
 .form .btn{grid-column:1/-1;justify-self:start;border:0;cursor:pointer}
 .sent{grid-column:1/-1;display:none;color:var(--teal);font-family:var(--f-display);font-weight:600}
 .form.done .sent{display:block}
-.form.done>*:not(.sent){display:none}
 @media (max-width:900px){.inq-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.form{grid-template-columns:1fr}}
 
@@ -301,7 +300,16 @@ section{padding-block:clamp(72px,9vw,120px)}
 (function(){var red=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var nums=document.querySelectorAll('[data-to]');if(red||!('IntersectionObserver' in window))return;
 nums.forEach(function(n){var to=+n.dataset.to,dec=+(n.dataset.dec||0),pre=n.dataset.pre||'',suf=n.dataset.suf||'';var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();var t0=performance.now(),d=1600;(function f(t){var p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,3);n.textContent=pre+(to*e).toFixed(dec)+suf;if(p<1)requestAnimationFrame(f)})(t0)},{threshold:.4});io.observe(n)})})();
 (function(){var ps=[].slice.call(document.querySelectorAll('.pn'));function on(p){ps.forEach(function(x){x.classList.toggle('on',x===p)})}ps.forEach(function(p){p.addEventListener('mouseenter',function(){if(matchMedia('(hover:hover)').matches)on(p)});p.addEventListener('click',function(){on(p)});p.addEventListener('focus',function(){on(p)})})})();
-document.getElementById('invform').addEventListener('submit',function(e){e.preventDefault();var f=e.target;if(!f.checkValidity()){f.reportValidity();return}f.classList.add('done');f.querySelector('button').disabled=true});
+document.getElementById('invform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target;
+  if(!f.checkValidity()){f.reportValidity();return}
+  var data={form:'investors'};
+  new FormData(f).forEach(function(v,k){data[k]=v});
+  f.classList.add('done');
+  f.querySelector('button').disabled=true;
+  fetch('https://curespec-leads.lironcurespec.workers.dev/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+});
 </script>
 </body>
 </html>

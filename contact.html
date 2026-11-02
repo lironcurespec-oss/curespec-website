@@ -77,7 +77,6 @@ section{padding-block:clamp(72px,9vw,120px)}
 .form .btn{grid-column:1/-1;justify-self:start;border:0;cursor:pointer}
 .sent{grid-column:1/-1;display:none;color:var(--teal);font-family:var(--f-display);font-weight:600}
 .form.done .sent{display:block}
-.form.done>*:not(.sent){display:none}
 @media (max-width:900px){.inq-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.form{grid-template-columns:1fr}}
 
@@ -114,7 +113,6 @@ section{padding-block:clamp(72px,9vw,120px)}
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="preview">Preview for review: Contact Us page. The form is not yet connected to Monday.</div>
 <header class="top"><div class="wrap">
   <a class="logo" href="index.html" aria-label="Curespec home"><i></i></a>
   <nav class="nav" aria-label="Main">
@@ -184,7 +182,16 @@ section{padding-block:clamp(72px,9vw,120px)}
 </div></footer>
 <script>
 (function(){var els=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});els.forEach(function(e){io.observe(e)})})();
-document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();var f=e.target;if(!f.checkValidity()){f.reportValidity();return}f.classList.add('done');f.querySelector('button[type=submit]').disabled=true});
+document.getElementById('contact-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target;
+  if(!f.checkValidity()){f.reportValidity();return}
+  var data={form:'contact'};
+  new FormData(f).forEach(function(v,k){data[k]=v});
+  f.classList.add('done');
+  f.querySelector('button[type=submit]').disabled=true;
+  fetch('https://curespec-leads.lironcurespec.workers.dev/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+});
 </script>
 </body>
 </html>
