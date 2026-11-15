@@ -71,6 +71,8 @@ section{padding-block:clamp(72px,9vw,120px)}
 .site:nth-child(3){animation-delay:.15s}.site:nth-child(4){animation-delay:.3s}.site:nth-child(5){animation-delay:.45s}.site:nth-child(6){animation-delay:.6s}.site:nth-child(7){animation-delay:.75s}
 .site b{font-family:var(--f-display);font-size:1.15rem;font-weight:600}
 .site small{margin-inline-start:auto;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;color:var(--on-d-2)}
+a.site{text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+a.site:hover{border-color:#3fc3ff;transform:translateX(0) translateY(-2px)}
 .pin{position:relative;width:12px;height:12px;border-radius:50%;background:#5fe0c0;box-shadow:0 0 12px #5fe0c0;flex:none}
 .pin::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(95,224,192,.7);animation:pin 2.4s ease-out infinite}
 .site:nth-child(3) .pin::after{animation-delay:.6s}.site:nth-child(4) .pin::after{animation-delay:1.2s}.site:nth-child(5) .pin::after{animation-delay:1.8s}.site:nth-child(6) .pin::after{animation-delay:2.4s}.site:nth-child(7) .pin::after{animation-delay:3s}
@@ -174,7 +176,6 @@ section{padding-block:clamp(72px,9vw,120px)}
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="preview">Preview for review: Private Inquiry page. Videos play on the live site.</div>
 <header class="top"><div class="wrap">
   <a class="logo" href="index.html" aria-label="Curespec home"><i></i></a>
   <nav class="nav" aria-label="Main">
@@ -203,7 +204,7 @@ section{padding-block:clamp(72px,9vw,120px)}
     </div>
     <div class="sites" aria-label="Treatment currently available in">
       <span class="cap">Treatment currently available in</span>
-      <div class="site"><span class="pin"></span><b>Israel</b><small>Private clinic</small></div>
+      <a class="site" href="israel-clinic.html"><span class="pin"></span><b>Israel</b><small>Private clinic</small></a>
       <div class="site"><span class="pin"></span><b>Brazil</b><small>BR</small></div>
       <div class="site"><span class="pin"></span><b>China</b><small>CN</small></div>
       <div class="site"><span class="pin"></span><b>Panama</b><small>PA</small></div>
