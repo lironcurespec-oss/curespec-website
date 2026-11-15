@@ -1,3 +1,55 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18036469544"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'AW-18036469544');
+</script>
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "w3dtjamm68");
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1387872630185592');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1387872630185592&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Lead conversion helper - fires only after a real successful submit to the leads worker -->
+<script>
+function curespecTrackLead() {
+  if (typeof gtag === 'function') {
+    gtag('event', 'generate_lead');
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18036469544/4YigCMPgp44cEKjeuphD',
+      'value': 1.0,
+      'currency': 'ILS'
+    });
+  }
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead');
+  }
+}
+</script>
+
 <title>טיפול בלחץ דם לא מאוזן | Curespec</title>
 <meta name="description" content="נוטלים תרופות ועדיין מתקשים לאזן את לחץ הדם? Nephrospec - טיפול לא פולשני, ממוקד בכליות. ללא ניתוח, ללא אשפוז. בדיקת התאמה ללא התחייבות.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -448,6 +500,8 @@ document.getElementById('lead-form').addEventListener('submit',function(e){
   var data={form:'lp-blood-pressure'};
   new FormData(f).forEach(function(v,k){data[k]=v});
   fetch('https://curespec-leads.lironcurespec.workers.dev/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    .then(function(){ if (typeof curespecTrackLead === 'function') curespecTrackLead(); })
+    .catch(function(){})
     .finally(function(){f.classList.add('done')});
 });
 document.querySelectorAll('.player').forEach(function(p){p.addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+p.dataset.id+'?autoplay=1&rel=0';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title=p.getAttribute('aria-label');p.replaceChildren(f);p.style.cursor='default'},{once:true})});
